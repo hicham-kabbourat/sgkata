@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand">Reservation App</a>
+  <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="my-nav" class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/reservation-list">Réservations <span class="sr-only"></span></a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="/rooms" tabindex="-1" aria-disabled="false">Salles</a>
+      </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="/NewReservation" tabindex="-1" aria-disabled="false">Nouvelle réservation +</a>
+              <!-- <button [routerLink]="['/NewReservation']">  </button> -->
+            </li>
+    </ul>
+  </div>
+</nav>
+
+<main role="main" class="container-fluid">
+  <h3 class="mt-5"></h3>
+  <div class="container-fluid mt-2">
+    <hr>
+  </div>
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,17 @@
+<div>
+  <p>Liste des reservations</p>
+</div>
+
+<div class="card-group">
+  <div class="card" *ngFor="let res of reservations">
+    <div class="card-body">
+      <h6 class="card-title">{{ res.Room}} </h6>
+      <h6 class="card-title">{{ res.Name}} </h6>
+      <p class="card-text"> {{ res.FirstName}} {{ res.LastName}} </p>
+      <p class="card-text"> {{ res.StartHour}}H-{{ res.EndHour}}H </p>
+      <p class="card-text"><small class="text-muted">
+        <button (click)="onDelete(res.Id)" >Supprimer</button> </small>
+      </p>
+    </div>
+  </div>
+</div>

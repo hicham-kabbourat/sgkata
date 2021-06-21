@@ -1,0 +1,11 @@
+<p>Liste des salles</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col">Salle</div>
+  </div>
+
+  <div class="row" *ngFor="let room of rooms; let i=index">
+    <div class="col">{{room}}</div> <button >Reserver</button>
+  </div>
+</div>

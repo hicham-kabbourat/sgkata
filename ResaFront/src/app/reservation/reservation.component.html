@@ -1,0 +1,65 @@
+<div class="card m-3">
+  <h5 class="card-header">Nouvelle R&servation</h5>
+  <div class="card-body">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+
+      <div class="form-group">
+        <label>Salle</label>
+        <select formControlName="room" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.room.errors }">
+          <option *ngFor="let room of rooms" value="{{room}}">{{room}}</option>
+        </select>
+      </div>
+
+        <div class="form-group col">
+          <label>Nom de la réservation</label>
+          <input type="text" formControlName="name" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+          <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">Nom est obligatoire</div>
+          </div>
+        </div>
+
+        <div class="form-group col-5">
+          <label>Prénom</label>
+          <input type="text" formControlName="firstName" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">Prénom est obligatoire</div>
+          </div>
+        </div>
+        <div class="form-group col-5">
+          <label>Nom</label>
+          <input type="text" formControlName="lastName" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Nom est obligatoire</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Heure de début</label>
+        <select formControlName="startHour" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.startHour.errors }">
+          <option *ngFor="let sh of startHours" value="{{sh}}">{{sh}}</option>
+          </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group col">
+          <label>Heure de fin</label>
+
+        <select formControlName="endHour" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.endHour.errors }">
+          <option *ngFor="let eh of endHours" value="{{eh}}">{{eh}}</option>
+        </select>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-secondary" type="reset" (click)="onReset()">Annuler</button>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <button class="btn btn-primary mr-1" type="submit">Valider</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
